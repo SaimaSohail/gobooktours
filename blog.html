@@ -10,7 +10,10 @@
 	<title>Blog</title>
 </head>
 <body>
-	<div class="header">
+	<div class="loader">
+		<img width="250" src="images/cardano-logo.gif">
+	</div>
+	<div class="header headerFixed">
 		<div class="header-inner">
 			<div class="header-left">
 				<img src="images/gobooktours-logo.png">
@@ -216,4 +219,25 @@
 		</div>
 	</div>
 </body>
+<script>
+	let header=document.querySelector(".header")
+	let loader=document.querySelector(".loader")
+	let body=document.querySelector("body")
+	// let body1=document.body
+	window.addEventListener("scroll",()=>{
+		let scrollHeight=window.scrollY;
+		if(scrollHeight>=100){
+			header.classList.add("headerFixed")
+		}
+		else{
+			header.classList.remove("headerFixed")
+		}
+		
+	})
+
+	window.addEventListener("load", ()=>{
+		loader.style.display="none"
+		body.style.overflow="scroll"
+	})
+</script>
 </html>
